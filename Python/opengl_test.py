@@ -1,3 +1,7 @@
+# this program uses pygame and PyOpenGl to render a cube on a surface and the camera can be moved around the surface
+# sources used: 
+# https://pythonprogramming.net/opengl-rotating-cube-example-pyopengl-tutorial/
+
 # imports
 import pygame
 from pygame.locals import *

@@ -1,3 +1,7 @@
+# this program uses pygame and PyOpenGl to render a cube on a surface and the camera can be moved around the surface
+# sources used: 
+# https://pythonprogramming.net/opengl-rotating-cube-example-pyopengl-tutorial/
+
 # imports
 import pygame
 from pygame.locals import *
@@ -82,32 +86,6 @@ white = (255, 255, 255)
 green = (0, 255, 0)
 blue =  (0, 0, 128)
 
-# this function shows the welcome screen
-def WelcomeScreen():
-    display_surface = pygame.display.set_mode((x, y))
-    pygame.display.set_caption('Initialize')
-    font = pygame.font.Font('freesansbold.ttf', 32)
-    text = font.render('welcome', True, green)
-    textRect = text.get_rect()
-    textRect.center = (x // 2, y // 2)
-    display_surface.blit(text, textRect)
-    pygame.display.update()
-
-# this functions shows the paused screen
-def Pause():
-    display_surface = pygame.display.set_mode((x, y))
-    pygame.display.set_caption('Initialize')
-    font = pygame.font.Font('freesansbold.ttf', 32)
-    text1 = font.render('PAUSED', True, green)
-    textRect1 = text1.get_rect()
-    textRect1.center = (x // 2, y // 2)
-    text2 = font.render('Press Escape Key To Resume Game', True, green)
-    textRect2 = text2.get_rect()
-    textRect2.center = (x // 2, (y // 2) - 20)
-    display_surface.blit(text1, textRect1)
-    display_surface.blit(text2, textRect2)
-    pygame.display.update()
-
 # this functions makes the cube
 def Cube():
     glBegin(GL_QUADS)
@@ -168,8 +146,6 @@ def main():
                         paused = False
                     else:
                         paused = True
-                        Pause()
-
 
         if needs_to_run:
             glRotatef(10, 10, 0 , 0)
